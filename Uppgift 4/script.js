@@ -23,9 +23,9 @@ function doCalculations(){
 
     area = 3.14159 * length * width / 4;
 
-    
     resultElement.innerHTML += "<p>Ellipsens area blir "+ area + "m<sup>2</sup>.</p>"
     resultElement.innerHTML += "<p>Längden " + length + " meter blir:</p>";
+
     distance = length / conv [0] * 100;
     resultElement.innerHTML += "<p>" + distance + "" + unit[0] + "</p>";
     distance = length / conv [1] * 100;
