@@ -2,7 +2,7 @@ body {
     font-family: "Arial", sans-serif;
 }
 
-section {
+main, section {
     text-align: center;
 }
 
@@ -25,3 +25,4 @@ section {
     font-size: 60px;
     
 }
+  
