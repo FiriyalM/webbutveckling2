@@ -13,11 +13,11 @@ function init(){
 
 function createNavElement(name, index){
     let li = document.createElement("li");
-    li.setAttribute("id", "ulLi" + index);
+    li.setAttribute("id", "ulli" + index);
     ul.appendChild(li);
 
     let a = document.createElement("a");
-    a.setAttribute("href", "../Sida"+ (index+1) +"/sida.html");
+    a.setAttribute("href", "../Sida "+ (index+1) +"/Sida.html");
     a.innerHTML = name;
-    document.getElementById("ulLi" + index).appendChild(a);
+    document.getElementById("ulli" + index).appendChild(a);
 }

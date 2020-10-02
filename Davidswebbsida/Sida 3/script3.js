@@ -17,7 +17,8 @@ function createNavElement(name, index){
     ul.appendChild(li);
 
     let a = document.createElement("a");
-    a.setAttribute("href", "../Sida"+ (index+1) +"/Sida.html");
+    a.setAttribute("href", "../Sida "+ (index+1) +"/Sida.html");
     a.innerHTML = name;
     document.getElementById("ulli" + index).appendChild(a);
 }
+
