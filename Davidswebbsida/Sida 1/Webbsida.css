@@ -1,5 +1,7 @@
 body{
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(251, 255, 6));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 Header{
@@ -22,7 +24,7 @@ ul{
 }
 li{
     width: 100%;
-    display: inline-block;
+    display: block;
     background-color: white;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -51,19 +53,6 @@ article{
 article p {
     margin: 15px;
 }
-section{
-    width: 100%;
-    margin-top: 10px;
-    min-height: 300px;
-    border-color:purple;
-    border-width: 1px;
-}
-aside{
-    width: 100%;
-    margin-top: 20px;
-    background-color: rgb(156, 156, 156);
-    min-height: 300px;
-}
 footer{
     background-color: rgb(156, 156, 156);
     color: white;
@@ -77,29 +66,10 @@ footer{
         box-sizing: border-box;
         line-height: 43px;
     }
-
     li + li{
         margin-top: 10px;
     }
-
-    nav{
-        float: left;
-        width: 20%;
-    }
-
-    main{
-        float: left;
-        width: 77%;
-        margin-left: 3%;
-        margin-top: 0;
-    }
-
-    footer{
-        line-height: 0px;
-        margin-top: 15px;
-        height: 30px;
-        float: left;
-    }
+  
 }
 @media screen and (min-width: 992px){
     body{
