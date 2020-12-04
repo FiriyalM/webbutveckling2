@@ -3,6 +3,7 @@ var formElem;		// Referens till elementet med hela formuläret
 var totalCostElem;	// Referens till elementet för totalpris
 var re;			// Array med reguljära uttryck för fälten
 var errMsg;		// Array med felmeddelanden
+ // Referens till andra span-elementet
 // Initiera globala variabler och koppla funktion till knapp
 
 function init(){
@@ -17,6 +18,7 @@ function init(){
         addListener(formElem.roomType[i], "click", calculateC);
         addListener(formElem.nights, "change", calculateC);
     }
+    addListener(formElem.city, "blur", checkCity);
     
     re = [
 
@@ -24,7 +26,7 @@ function init(){
 		/^[A-ZÅÄÖ]+((-| )[A-ZÅÄÖ0-9]+)*$/i,		// Adress
 		/^\d{3} ?\d{2}$/,						// Postnummer
 		/^[A-ZÅÄÖ]+((-| )[A-ZÅÄÖ]+)*$/i,		// Ort
-        /^0\d{1,3}[-/ ]?\d{5,8}$/	
+        /^0\d{1,3}[-/ ]?\d{5,8}$/	            // Telefon
 
     ];
     errMsg = [
@@ -33,7 +35,12 @@ function init(){
 		"Postnumret måste bestå av fem siffror.",
 		"Orten får endast innehålla bokstäverna a-ö, bindestreck och blanktecken.",
 		"Telnr måste börja med en 0:a och sedan 6-11 siffror."
-	]; 
+    ]; 
+    
+    addListener(formElem.campaigncode, "focus", startCheckCampaign);
+    addListener(formElem.campaigncode, "keyup", checkCampaign);
+    addListener(formElem.campaigncode, "blur", endcheckCampaign);
+    formElem.campaigncode.value = " ";
 
 	checkIfFamilyRoom();
     calculateC();
@@ -88,31 +95,40 @@ function calculateC() {
     
 } 
 
-/**function checkField(theField,index) {
-    var errMsgElem; // Referens till andra span-elementet
-    errMsgElem = theField.parentNode.parentNode.getElementsByTagName("span")[1];
-    errMsgElem.innerHTML = "";
-    if (!re[index].test(theField.value)) {
+
+function checkCity(){
+    let city;
+    city = formElem.city.value;
+    city = city.toUpperCase;
+    formElem.city.value = city;
+}
+
+function checkZipcode() {
+    checkField(formElem.zipcode,0);
+}
+
+function startCheckCampaign(){
+    this.style.backgroundColor = "#F99";
+    this.select();
+}
+    
+function checkCampaign(){
+    if(re.test(tis.value));
+  
+}
+
+function endcheckCampaign(){
+    this.style.backgroundColor = " ";
+}
+
+function checkField(field,index) {
+    let errMsgElem; 
+    
+    errMsgElem = this.field.parentNode.getElementsByTagName("span")[1];
+    errMsgElem.innerHTML = " ";
+    if (!re[index].test(field.value)) {
         errMsgElem.innerHTML = errMsg[index];
         return false;
     }
     else return true;
 } // checkField
-function checkZipcode() {
-    checkField(formElem.zipcode,0);
-}
-    function checkTel() {
-    checkField(formElem.tel,1);
-} // End checkTel
-    
-function checkCampaign(){
-    this.style.backgroundColor = "#F99";
-    this.select();
-    if(re.test(tis.value)) this.style.backgroundColor = "#6F9";
-    else this.style.backgroundColor = "#F99";
-    }
-    
-function endcheckCampaign(){
-this.style.backgroundColor = " ";
-}*/
-   
