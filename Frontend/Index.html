@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Witter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to Witter</h1> <!--- sidehuvud --->
+</header>
+<main> <!-- Innehål l-->
+    <div class="login-form">
+        <h2> Login </h2>
+        <!-- Where you can write your password and username -->
+        <form action="auth" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit">
+        </form>
+    </div>
+    <!-- The button that connects to CreateUser page -->
+    <a href="CreateUser.html"><button class="button">Register</button></a>
+</main>
+<script type="text/javascript" src="script.js"></script>
+<footer>
+    <p>Webbutveckling 2</p>
+</footer>
+</body>
+</html>

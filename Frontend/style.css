@@ -1,0 +1,141 @@
+/* Grids that makes it easier to seprate things*/
+/* Give all of them names so we can put it in those we want them to have*/
+body{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px;
+    grid-gap: 100px;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+header{
+    grid-area: header;
+    background-color: #99e6e6;
+    width: 100%;
+}
+
+header h1{
+    text-align: center;
+    font-size: x-large;
+}
+main{
+    grid-area: main;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+/* This is for the login page*/
+.login-form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+.login-form h2 {
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+/* I give the username and password different Id so it will make it easier for us to see which one we are using*/
+/* The password uses something called -webkit-text-security: that makes what ever you write look like dots*/
+/* -webkit-text-security: is a non standard CSS property thatt obuscates 
+characters in <form> field(such as <input> or <textarea>) by replacing them with shape*/
+.login-form input[type="password"],
+.login-form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+/* this is the button that submits your data to see if it is correct or not */
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+/* This whole row under is for the sign in page */
+/* Uses the same as login css */
+.Register-form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+.Register-form h2 {
+    text-align: center;
+    color: #4d4d4d;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+.Register-form input[type="password"],
+.Register-form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+.Register-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+/* The way the body looks */
+.button{
+    width: 100%;
+    padding: 15px;
+    background-color: #535b63;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+}
+footer{
+    grid-area: footer;
+    text-align: center;
+    background-color:#99e6e6;
+    text-size-adjust: 10px ;
+    width: 100%;
+}
+
+/* This is what helps us make the sits adapt to different screens*/
+/* Mobil first*/
+@media screen and (min-width:576px){
+    body{
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    }
+
+}
+@media screen and (min-width:980px){
+    body{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas: 
+        "header header header"
+        "main main"
+        "footer footer footer";
+    }
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+}
